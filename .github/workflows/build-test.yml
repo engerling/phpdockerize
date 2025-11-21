@@ -11,18 +11,32 @@ jobs:
                     docker compose version 
                     echo "Docker is installed."
                     echo "So we will use docker/docker-compose.yml."
+                    echo "virtual: docker" >> $GITHUB_ENV
 
                 elif command -v podman-compose version &> /dev/null
                 then
                     podman-compose version
                     echo "Podman is installed."
                     echo "So we will use podman/podman-compose.yml."
+                    echo "virtual: podman" >> $GITHUB_ENV
                 else
                     echo "Neither Docker nor Podman is installed. Exiting."
                     exit 1
                 fi
             - name: Checkout repository
               uses: actions/checkout@v3
+            - name: Build and Test with Docker Compose
+              if: env.virtual == 'docker'
+              run: |
+                docker compose -f docker/docker-compose.yml up -d --build
+                sleep 10
+            - name: Build and Test with Podman Compose
+              if: env.virtual == 'podman'
+              run: |
+                podman-compose -f podman/podman-compose.yml up -d --build
+                sleep 10
+             
+
             
 
               
