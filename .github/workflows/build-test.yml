@@ -1,7 +1,7 @@
 name: build-test
 on: [push, workflow_dispatch]
 jobs:
-    check-for-docker-podman:
+    check-for-docker-or-podman:
         runs-on: ubuntu-latest
         steps:
             - name: Check for docker or podman
@@ -10,6 +10,7 @@ jobs:
                 then
                     echo "Docker is installed."
                     echo "So we will use docker/docker-compose.yml."
+
                 elif command -v podman &> /dev/null
                 then
                     echo "Podman is installed."
