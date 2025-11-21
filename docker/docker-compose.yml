@@ -2,6 +2,6 @@ version: '3.9'
 services:
   apache:
     image: httpd:latest
-    container_name: my-apache-app
+    container_name: php-app
     ports:
     - '8080:80'
