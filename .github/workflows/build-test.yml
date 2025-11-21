@@ -9,11 +9,11 @@ jobs:
                 if command -v docker &> /dev/null
                 then
                     echo "Docker is installed."
-                    echo "So we well use docker/docker-compose.yml."
+                    echo "So we will use docker/docker-compose.yml."
                 elif command -v podman &> /dev/null
                 then
                     echo "Podman is installed."
-                    echo "So we well use podman/podman-compose.yml."
+                    echo "So we will use podman/podman-compose.yml."
                 else
                     echo "Neither Docker nor Podman is installed. Exiting."
                     exit 1
