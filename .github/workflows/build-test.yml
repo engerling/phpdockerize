@@ -2,7 +2,7 @@ name: build-test
 on: [push, workflow_dispatch]
 jobs:
     check-for-docker-or-podman:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         steps:
             - name: Check for docker or podman
               run: |
