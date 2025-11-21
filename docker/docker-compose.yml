@@ -1,7 +1,26 @@
-version: '3.9'
+
+version: '3'
 services:
-  apache:
-    image: httpd:latest
-    container_name: php-app
+  web:
+    build: .
+    container_name: apache-php
     ports:
-    - '8080:80'
+      - "80:80"
+    volumes:
+      - ./php:/var/www/
+  db:
+    image: mysql:8
+    container_name: mysql-server
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secure_password
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
