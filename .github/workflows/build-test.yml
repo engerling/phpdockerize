@@ -34,7 +34,7 @@ jobs:
               run: |
                 echo "Using podman/podman-compose.yml"
                 podman-compose -f podman/podman-compose.yml up --build -d
-                podman-compose -f podman/podman-compose.yml
+                
             
              
 
