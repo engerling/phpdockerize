@@ -9,9 +9,11 @@ jobs:
                 if command -v docker &> /dev/null
                 then
                     echo "Docker is installed."
+                    echo "So we well use Docker."
                 elif command -v podman &> /dev/null
                 then
                     echo "Podman is installed."
+                    echo "So we well use Podman."
                 else
                     echo "Neither Docker nor Podman is installed. Exiting."
                     exit 1
