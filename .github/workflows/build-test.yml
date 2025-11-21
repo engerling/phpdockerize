@@ -19,3 +19,6 @@ jobs:
                     echo "Neither Docker nor Podman is installed. Exiting."
                     exit 1
                 fi
+            - name: Checkout repository
+              uses: actions/checkout@v3
+              
