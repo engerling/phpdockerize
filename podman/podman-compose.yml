@@ -1,6 +1,6 @@
-version: '3.9'
+version: '3'
 services:
-  apache:
-    image: httpd:latest
+  web:
+    image: nginx:alpine
     ports:
-    - '8080:80'
+      - "8080:80"
