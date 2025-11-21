@@ -2,9 +2,9 @@ name: build-test
 on: [push]
 jobs:
   check-for-docker-podman:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-      - name: Check for Docker or Podman
+      - name: Check for docker or podman
         run: |
           if command -v docker &> /dev/null
           then
