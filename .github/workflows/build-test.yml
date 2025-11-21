@@ -29,6 +29,7 @@ jobs:
               if: env.virtual == 'docker'
               run: |
                 echo "Using docker/docker-compose.yml"
+                docker compose -f docker/docker-compose.yml up --build -d
             - name: Build and Test with Podman Compose
               if: env.virtual == 'podman'
               run: |
