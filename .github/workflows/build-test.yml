@@ -11,14 +11,14 @@ jobs:
                     docker compose version 
                     echo "Docker is installed."
                     echo "So we will use docker/docker-compose.yml."
-                    echo "virtual: docker" >> $GITHUB_ENV
+                    echo "virtual:docker" >> $GITHUB_ENV
 
                 elif command -v podman-compose version &> /dev/null
                 then
                     podman-compose version
                     echo "Podman is installed."
                     echo "So we will use podman/podman-compose.yml."
-                    echo "virtual: podman" >> $GITHUB_ENV
+                    echo "virtual:podman" >> $GITHUB_ENV
                 else
                     echo "Neither Docker nor Podman is installed. Exiting."
                     exit 1
