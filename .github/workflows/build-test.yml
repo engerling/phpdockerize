@@ -1,7 +1,7 @@
 name: build-test
 on: [push, workflow_dispatch]
 jobs:
-    check-for-docker-or-podman:
+    check-if-docker-or-podman:
         runs-on: self-hosted
         steps:
             - name: Check for docker or podman
