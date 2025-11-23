@@ -8,7 +8,7 @@ services:
     volumes :
       - ./html:/usr/local/apache2/htdocs:ro
     restart: unless-stopped
-    db:
+  db:
       image: mysql:8
       container_name: mysql-server
       command: --default-authentication-plugin=mysql_native_password
