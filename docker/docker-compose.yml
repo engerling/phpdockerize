@@ -2,6 +2,7 @@
 version: '3.8'
 services:
   webserver:
+    container_name: apache
     image: httpd:2.4
     ports:
       - "8080:80"
